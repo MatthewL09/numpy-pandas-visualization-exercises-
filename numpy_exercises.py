@@ -5,11 +5,14 @@ a = np.array([4, 10, 12, 23, -2, -1, 0, 0, 0, -6, 3, -7])
 # Number 1 - 5
 len(a[a < 0])
 
+#(a<0).sum() - this will count TRUE's as 1 and FALSE's as 2
+
 # Number 2 - 5
 
 len(a[a > 0])
 
 # Number 3 - 3
+## print (a[(a>0) & (a % 2 == 0)])
 b = a[a > 0]
 len(b[b % 2 == 0])
 
@@ -19,10 +22,12 @@ plus_three
 len(plus_three[plus_three > 0])
 
 # Number 5 - 74.0 , 144.0
+## dictionaries created with {} to LABEL the answers. answers are LABELED with keys 'mean' and 'standard_deviation'
 squared = a ** 2
 squared.mean(), squared.std()
 
 # Number 6
+# center the array 'centered = a -a.mean()'
 mean = a.mean()
 mean
 a - mean
@@ -42,31 +47,31 @@ a = np.array(a)
 
 # Use python's built in functionality/operators to determine the following:
 # Exercise 1 - Make a variable called sum_of_a to hold the sum of all the numbers in above list
-sum_of_a = a.sum()
+sum_of_a = sum(a)
 sum_of_a
 
 # Exercise 2 - Make a variable named min_of_a to hold the minimum of all the numbers in the above list
 
-min_of_a = a.min()
+min_of_a = min(a)
 min_of_a
 
 # Exercise 3 - Make a variable named max_of_a to hold the max number of all the numbers in the above list
 
-max_of_a = a.max()
+max_of_a = max(a)
 max_of_a
 
 # Exercise 4 - Make a variable named mean_of_a to hold the average of all the numbers in the above list
 
-mean_of_a = a.mean()
+mean_of_a = mean(a)
 mean_of_a
 
 # Exercise 5 - Make a variable named product_of_a to hold the product of multiplying all the numbers in the above list together
 
-product_of_a = a.prod()
+product_of_a = prod(a)
 product_of_a
 
 # Exercise 6 - Make a variable named squares_of_a. It should hold each number in a squared like [1, 4, 9, 16, 25...]
-
+# '[n ** 2 for n in a]'
 squares_of_a = a**2
 squares_of_a
 
@@ -168,11 +173,12 @@ b.shape
 
 # Exercise 10 - transpose the array b.
 
-b.transpose()
+b.transpose() 
+# same as b.T
 
 
 # Exercise 11 - reshape the array b to be a single list of 6 numbers. (1 x 6)
-
+### b.flatten()
 b.reshape(6,)
 
 # Exercise 12 - reshape the array b to be a list of 6 lists, each containing only 1 number (6 x 1)
@@ -185,8 +191,8 @@ c = np.array ([
     [4, 5, 6],
     [7, 8, 9]
 ])
-
-c
+# c =np.array(c)
+c 
 
 # HINT, you'll first need to make sure that the "c" variable is a numpy array prior to using numpy array methods.
 # Exercise 1 - Find the min, max, sum, and product of c.
@@ -207,7 +213,7 @@ c.shape
 
 # Exercise 5 - Transpose c and print out transposed result.
 
-c.transpose()
+c.T
 
 # Exercise 6 - Get the dot product of the array c with c. 
 
@@ -259,7 +265,7 @@ positive
 np.unique(d)
 
 # Exercise 7 - Determine how many unique numbers there are in d.
-
+# np.unique(d).size
 values = (np.unique(d))
 
 len(values)
@@ -272,7 +278,7 @@ d.shape
 
 # Exercise 9 - Transpose and then print out the shape of d.
 
-print(d.transpose())
+d.T.shape
 
 # Exercise 10 - Reshape d into an array of 9 x 2
 
